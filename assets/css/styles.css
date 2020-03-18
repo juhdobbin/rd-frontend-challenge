@@ -29,6 +29,9 @@ body {
     background: linear-gradient(-45deg, #aaa 25%, #eee 100%);
     background-attachment: fixed;
 }
+.logo{
+    max-width: 100px;
+}
 
 /**
 * YOUR CODE HERE
