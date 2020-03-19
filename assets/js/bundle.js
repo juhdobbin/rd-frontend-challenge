@@ -43,8 +43,8 @@
         const inputEmail =
             "<input type='email' id='email' required name='email' placeholder='Entre com seu e-mail'/> ";
         const inputPassword =
-            "<input type='text' id='password' minlength='5' required name='password' placeholder='Digite sua senha supersecreta'/> ";
-        const inputButton = "<button type='submit'> Entrar </button>";
+            "<input type='password' id='password' minlength='5' required name='password' placeholder='Digite sua senha supersecreta'/> ";
+        const inputButton = "<button type='submit' disabled='disabled'> Entrar </button>";
 
         return inputEmail + inputPassword + inputButton;
     }

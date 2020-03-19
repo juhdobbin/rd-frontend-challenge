@@ -1,25 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
 }
+
 *:focus {
     outline: 0;
 }
-html, body, #app {
+
+html,
+body,
+#app {
     height: 100%;
 }
-body, input, button {
+
+body,
+input,
+button {
     font: 14px 'Roboto', sans-serif;
 }
+
 a {
     text-decoration: none;
 }
+
 ul {
     list-style: none;
 }
+
 button {
     cursor: pointer;
 }
@@ -29,10 +40,69 @@ body {
     background: linear-gradient(-45deg, #aaa 25%, #eee 100%);
     background-attachment: fixed;
 }
-.logo{
-    max-width: 100px;
-}
+
 
 /**
 * YOUR CODE HERE
 */
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+
+.logo {
+    max-width: 50px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login {
+    display: block;
+
+}
+
+.login form {
+    width: 100%;
+    background-color: #e5e4e5;
+    padding: 15px;
+    border-radius: 15px 0;
+}
+
+.login form input,
+.login form button {
+    width: 100%;
+    background-color: #d1d1d1;
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #00071c;
+}
+
+.login form input+input,
+.login form input+button {
+    margin-top: 10px;
+
+}
+
+.login form input ::placeholder {
+    color: #787b7e;
+}
+
+.login form button {
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #008429;
+}
+.login form button:hover{
+    background-color: #00a333;
+}
+
+.login form button:disabled {
+    cursor: no-drop;
+    background-color: #d1d1d1;
+}
