@@ -87,19 +87,24 @@
         app.classList.add('logged');
         Login.style.display = 'none';
 
-        const Ul = create('ul');
-        Ul.classList.add('container');
+        const ul = create('ul');
+        ul.classList.add('users-list');
 
         users.forEach(user => {
             const li = create('li');
-            const loginText = document.createTextNode(user.login);
+            li.classList.add('user');
 
+            const loginText = document.createTextNode(user.login);
+            const avatar = create('img');
+            avatar.src = user.avatar_url;
+
+            li.appendChild(avatar);
             li.appendChild(loginText);
 
-            Ul.appendChild(li);
+            ul.appendChild(li);
         });
 
-        app.appendChild(Ul);
+        app.appendChild(ul);
     }
 
     // init

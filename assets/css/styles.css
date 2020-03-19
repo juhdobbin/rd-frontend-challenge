@@ -61,6 +61,7 @@ body {
     margin: 20px 0;
 }
 
+/* login */
 .login {
     display: block;
 
@@ -98,11 +99,57 @@ body {
     color: #fff;
     background-color: #008429;
 }
-.login form button:hover{
+
+.login form button:hover {
     background-color: #00a333;
+    transition: linear 0.2s;
 }
 
 .login form button:disabled {
     cursor: no-drop;
     background-color: #d1d1d1;
+}
+
+/* users list */
+ul.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 37%;
+}
+
+ul.users-list li.user {
+    background-color: #fff;
+    display: inline-flex;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    border-radius: 5px;
+    align-items: center;
+    flex-grow: 1;
+    color: #888888;
+}
+
+ul.users-list li.user img {
+    width: 25px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    margin-right: 10px;
+}
+
+ul.users-list li.user:hover img {
+    filter: grayscale(0%);
+    transform: scale(2);
+    transition: linear 0.3s;
+
+}
+
+@media (max-width: 1200px) {
+    ul.users-list {
+        width: 60%;
+    }
+}
+@media (max-width: 768px) {
+    ul.users-list {
+        width: 90%;
+    }
 }
