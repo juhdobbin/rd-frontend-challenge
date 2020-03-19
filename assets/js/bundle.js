@@ -11,10 +11,15 @@
     Logo.src = './assets/images/logo.svg';
     Logo.classList.add('logo');
 
+    const loading = create('span');
+
     const Form = create('form');
 
     Form.onsubmit = async e => {
-        e.preventDefault();
+        e.preventDefault();     
+        loading.classList.add('show');
+        Login.style.display = 'none';
+
         const [email, password] = [selector('#email'), selector('#password')];
 
         const {
@@ -37,6 +42,7 @@
     Form.innerHTML = buildForm();
 
     app.appendChild(Logo);
+    createLoading();
     Login.appendChild(Form);
 
     function buildForm() {
@@ -85,7 +91,7 @@
 
     function renderPageUsers(users) {
         app.classList.add('logged');
-        Login.style.display = 'none';
+        loading.classList.remove('show');
 
         const ul = create('ul');
         ul.classList.add('users-list');
@@ -94,17 +100,22 @@
             const li = create('li');
             li.classList.add('user');
 
-            const loginText = document.createTextNode(user.login);
+            const username = document.createTextNode(user.login);
             const avatar = create('img');
             avatar.src = user.avatar_url;
 
             li.appendChild(avatar);
-            li.appendChild(loginText);
+            li.appendChild(username);
 
             ul.appendChild(li);
         });
 
         app.appendChild(ul);
+    }
+
+    function createLoading() {
+        loading.classList.add('loader');
+        app.append(loading);
     }
 
     // init
